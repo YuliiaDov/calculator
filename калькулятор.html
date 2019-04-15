@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            First page
+        </title>
+        <script type="text/javascript">
+          var x, y, z;
+        </script>
+    </head>
+<body>
+<br>
+<h1>Calculator</h1>
+<form action="">
+First number:<br>
+<input type="text" name="firstnumber" id="firstnumber" onchange="CheckNumber(this.value)" value=""> 
+<br>
+Second number:<br>
+<input type="text" name="secondnumber" id="secondnumber" onchange="CheckNumber(this.value)" value="">
+<br><br>
+<input type="submit" onclick="plus(); alert('Result: ' + z);" value="+">
+<input type="submit" onclick= "minus();alert('Result: ' + z);" value="-"> <br>
+<br>
+<input type="submit" onclick= "mnogennya();alert('Result: ' + z);" value="*">
+<input type="submit" onclick= "dilennya();alert('Result: ' + z);" value="/">
+
+</form>
+<script type="text/javascript">
+function readValues() {
+ x = parseInt(document.getElementById("firstnumber").value); 
+ y = parseInt(document.getElementById("secondnumber").value);
+ CheckNumber(x);
+ CheckNumber(y);
+}
+function CheckNumber(a) {
+
+  if (isNaN(a)) {
+    alert ('You need to enter a number!');
+   return;
+  }
+}
+ function plus() {
+  readValues();
+  z = x + y;
+}
+function minus() {
+  readValues();
+  z = x - y;
+}
+function dilennya() {
+  readValues();
+  z = x/y;
+  if (y > 0) {
+  } 
+  else {
+    alert("Mistake");
+  }
+}
+function mnogennya() {
+  readValues();
+  z = x*y;
+}
+</script>
+</body>
+</html>
